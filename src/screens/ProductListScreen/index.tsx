@@ -1,17 +1,17 @@
-import {SafeAreaView, FlatList} from 'react-native';
-import {ProductListItem} from './components/ProductListItem';
+import {SafeAreaView} from 'react-native';
 
-const products = [1, 2, 3, 4, 5, 6];
+import {ProductList} from './components/ProductList';
+
+import {AppErrorBoundary, LoadingSuspense} from '../../shared/components';
 
 export function ProductListScreen() {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <FlatList
-        data={products}
-        renderItem={() => <ProductListItem style={{flex: 0.5}} />}
-        keyExtractor={item => item.toString()}
-        numColumns={2}
-      />
+      <LoadingSuspense>
+        <AppErrorBoundary>
+          <ProductList />
+        </AppErrorBoundary>
+      </LoadingSuspense>
     </SafeAreaView>
   );
 }
