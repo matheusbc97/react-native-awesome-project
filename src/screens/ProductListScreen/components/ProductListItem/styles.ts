@@ -4,7 +4,7 @@ import {spacing} from '../../../../shared/theme';
 export default StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
-    borderRadius: 3,
+    borderRadius: 5,
 
     shadowColor: '#000',
     shadowOffset: {
@@ -16,6 +16,17 @@ export default StyleSheet.create({
     elevation: 5,
 
     margin: spacing.small,
-    padding: spacing.medium,
+    overflow: 'hidden',
+  },
+  content: {
+    padding: spacing.small,
+    paddingHorizontal: spacing.medium,
+    flex: 1,
+  },
+  title: {
+    paddingVertical: spacing.extraSmall,
+  },
+  footer: {
+    alignItems: 'center',
   },
 });

@@ -1,6 +1,9 @@
-import {View, Text, StyleProp, ViewStyle} from 'react-native';
-import styles from './styles';
+import {View, Text, StyleProp, ViewStyle, Image} from 'react-native';
+
 import {IProduct} from '../../../../shared/types';
+import {TextButton} from '../../../../shared/components';
+
+import styles from './styles';
 
 export interface IProductListItemProps {
   style?: StyleProp<ViewStyle>;
@@ -10,7 +13,17 @@ export interface IProductListItemProps {
 export function ProductListItem({style, product}: IProductListItemProps) {
   return (
     <View style={[style, styles.container]}>
-      <Text>ProductListItem</Text>
+      <Image source={{uri: product.thumbnail, height: 120}} />
+      <View style={styles.content}>
+        <View style={{flex: 1}}>
+          <Text style={styles.title} numberOfLines={2}>
+            {product.title}
+          </Text>
+        </View>
+        <View style={styles.footer}>
+          <TextButton onPress={() => {}} text="ADICIONAR" color="success" />
+        </View>
+      </View>
     </View>
   );
 }
