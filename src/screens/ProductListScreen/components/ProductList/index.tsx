@@ -2,12 +2,13 @@ import {ActivityIndicator, FlatList, View, Text} from 'react-native';
 import {useGetProducts} from '../../hooks/useGetProducts';
 import {ProductListItem} from '../ProductListItem';
 import {spacing} from '../../../../shared/theme';
+import {Center} from '../../../../shared/components';
 
 function ListEmptyComponent() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Center>
       <Text>Nenhum produto encontrado</Text>
-    </View>
+    </Center>
   );
 }
 
