@@ -1,13 +1,20 @@
-import {useQuery} from 'react-query';
 import {getProductListService} from '../../../shared/services';
 import {QUERY_KEYS} from '../../../shared/constants';
+import {useInfinityScroll} from '../../../shared/hooks';
 
 export function useGetProducts() {
-  const {data} = useQuery(QUERY_KEYS.PRODUCTS, getProductListService, {
-    suspense: true,
-  });
+  const {data, isFetching, fetchNextPage, isRefetching, refetch} =
+    useInfinityScroll({
+      queryKey: QUERY_KEYS.PRODUCTS,
+      queryFn: getProductListService,
+      dataSelector: item => item.products,
+    });
 
   return {
-    products: data?.products,
+    products: data,
+    fetchNextPage,
+    isFetching,
+    isRefetching,
+    refetch,
   };
 }

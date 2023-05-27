@@ -1,15 +1,17 @@
-import {IProduct} from '../types';
+import {IProduct, PaginationResponse} from '../types';
+import {PaginationParams} from '../types/paginationParams';
 import api from './api';
 
-interface GetProductListServiceResponse {
-  limit: number;
+interface GetProductListServiceResponse extends PaginationResponse {
   products: IProduct[];
-  skip: number;
-  total: number;
 }
 
-export async function getProductListService(): Promise<GetProductListServiceResponse> {
-  const response = await api.get('products');
+export async function getProductListService(
+  params: PaginationParams,
+): Promise<GetProductListServiceResponse> {
+  const response = await api.get('products', {
+    params,
+  });
 
   return response.data;
 }
