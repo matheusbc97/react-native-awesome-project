@@ -14,15 +14,13 @@ export function ProductListItem({style, product}: IProductListItemProps) {
   return (
     <View style={[style, styles.container]}>
       <Image source={{uri: product.thumbnail, height: 120}} />
-      <View style={styles.content}>
-        <View style={{flex: 1}}>
-          <Text style={styles.title} numberOfLines={2}>
-            {product.title}
-          </Text>
-        </View>
-        <View style={styles.footer}>
-          <TextButton onPress={() => {}} text="ADICIONAR" color="success" />
-        </View>
+      <View style={styles.body}>
+        <Text style={styles.title} numberOfLines={2}>
+          {product.title}
+        </Text>
+      </View>
+      <View style={styles.footer}>
+        <TextButton onPress={() => {}} text="ADICIONAR" color="success" />
       </View>
     </View>
   );

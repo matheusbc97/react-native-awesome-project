@@ -18,8 +18,8 @@ export default StyleSheet.create({
     margin: spacing.small,
     overflow: 'hidden',
   },
-  content: {
-    padding: spacing.small,
+  body: {
+    paddingVertical: spacing.small,
     paddingHorizontal: spacing.medium,
     flex: 1,
   },
@@ -28,5 +28,6 @@ export default StyleSheet.create({
   },
   footer: {
     alignItems: 'center',
+    paddingBottom: spacing.small,
   },
 });
