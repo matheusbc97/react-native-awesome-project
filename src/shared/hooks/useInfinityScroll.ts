@@ -38,6 +38,7 @@ export function useInfinityScroll<
       }
       return pages.length + 1;
     },
+    suspense: true,
   });
 
   const fetchNextPage = () => {
