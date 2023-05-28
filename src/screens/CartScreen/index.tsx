@@ -1,16 +1,20 @@
-import {View, Text} from 'react-native';
-import {IProduct, IScreenProps} from '../../shared/types';
-import {FlatList} from '../../shared/components';
+import {Text} from 'react-native';
+
+import {IScreenProps} from '../../shared/types';
+import {Column, FlatList} from '../../shared/components';
+import {useGetCartProducts} from '../../shared/hooks';
 
 export function CartScreen({}: IScreenProps<'Cart'>) {
+  const cartProducts = useGetCartProducts();
+
   return (
-    <View style={{flex: 1}}>
+    <Column flex={1}>
       <FlatList
-        data={[] as IProduct[]}
+        data={cartProducts}
         emptyListText="Carrinho Vazio"
         keyExtractor={product => product.id.toString()}
         renderItem={({item}) => <Text>{item.title}</Text>}
       />
-    </View>
+    </Column>
   );
 }
