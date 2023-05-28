@@ -3,8 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {CartScreen, ProductListScreen} from '../../screens';
 import {Header} from '../components/Header';
+import {IStackParams} from './types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<IStackParams>();
 
 export function AppNavigator() {
   return (

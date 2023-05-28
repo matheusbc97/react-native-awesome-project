@@ -3,3 +3,4 @@ export * from './paginationParams';
 export * from './paginationResponse';
 export * from './color';
 export * from './spacing';
+export * from './ScreenProps';

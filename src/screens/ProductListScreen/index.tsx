@@ -3,8 +3,9 @@ import {SafeAreaView} from 'react-native';
 import {ProductList} from './components/ProductList';
 
 import {AppErrorBoundary, LoadingSuspense} from '../../shared/components';
+import {IScreenProps} from '../../shared/types';
 
-export function ProductListScreen() {
+export function ProductListScreen({}: IScreenProps<'Cart'>) {
   return (
     <SafeAreaView style={{flex: 1}}>
       <LoadingSuspense>

@@ -28,6 +28,7 @@ export function Button({
   elevated,
   backgroundColor,
   children,
+  ...props
 }: PropsWithChildren<IButtonProps>) {
   const getStyle = useGetEnhancedStyles();
 
@@ -54,7 +55,8 @@ export function Button({
           backgroundColor,
         }),
         style,
-      ]}>
+      ]}
+      {...props}>
       {children}
     </TouchableOpacity>
   );
