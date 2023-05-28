@@ -15,19 +15,18 @@ export default StyleSheet.create({
     shadowRadius: 2,
     elevation: 5,
 
-    margin: spacing.small,
     overflow: 'hidden',
   },
   body: {
-    paddingVertical: spacing.small,
-    paddingHorizontal: spacing.medium,
+    paddingVertical: spacing.s,
+    paddingHorizontal: spacing.m,
     flex: 1,
   },
   title: {
-    paddingVertical: spacing.extraSmall,
+    paddingVertical: spacing.xs,
   },
   footer: {
     alignItems: 'center',
-    paddingBottom: spacing.small,
+    paddingBottom: spacing.s,
   },
 });

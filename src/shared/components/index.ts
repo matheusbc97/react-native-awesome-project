@@ -6,3 +6,5 @@ export * from './TextButton';
 export * from './Center';
 export * from './ListEmptyComponent';
 export * from './InfinityScrollFlatList';
+export * from './Column';
+export * from './Row';

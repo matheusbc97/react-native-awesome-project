@@ -12,7 +12,7 @@ export interface ITextButtonProps {
 export function TextButton({onPress, text, style}: ITextButtonProps) {
   return (
     <TouchableOpacity
-      style={[{padding: spacing.extraSmall}, style]}
+      style={[{padding: spacing.xs}, style]}
       onPress={onPress}>
       <Text style={{color: '#388E3C'}}>{text}</Text>
     </TouchableOpacity>

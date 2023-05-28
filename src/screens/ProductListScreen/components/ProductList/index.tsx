@@ -1,8 +1,5 @@
-import {View} from 'react-native';
-
 import {useGetProducts} from '../../hooks/useGetProducts';
-import {spacing} from '../../../../shared/theme';
-import {InfinityScrollFlatList} from '../../../../shared/components';
+import {Column, InfinityScrollFlatList} from '../../../../shared/components';
 
 import {ProductListItem} from '../ProductListItem';
 
@@ -10,7 +7,7 @@ export function ProductList() {
   const {products, fetchNextPage, refetch, isRefetching} = useGetProducts();
 
   return (
-    <View style={{padding: spacing.small, flex: 1}}>
+    <Column padding="s" flex={1}>
       <InfinityScrollFlatList
         data={products}
         renderItem={({item: product}) => (
@@ -22,6 +19,6 @@ export function ProductList() {
         onRefresh={refetch}
         refreshing={isRefetching}
       />
-    </View>
+    </Column>
   );
 }
