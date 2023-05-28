@@ -1,5 +1,5 @@
 import {QueryClient, QueryClientProvider} from 'react-query';
-import {AppNavigator} from './navigation/AppNavigator';
+import {AppNavigator} from './core/navigation/AppNavigator';
 
 const queryClient = new QueryClient();
 

@@ -8,3 +8,4 @@ export * from './ListEmptyComponent';
 export * from './InfinityScrollFlatList';
 export * from './Column';
 export * from './Row';
+export * from './Button';
