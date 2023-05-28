@@ -1,6 +1,58 @@
 import {PropsWithChildren} from 'react';
 import {Text as RNText, TextProps} from 'react-native';
+import {useGetEnhancedStyles} from '../hooks/useGetEnhancedStyles';
+import {IEnhancedStyleProps} from '../types/IEnhancedStyleProps';
 
-export function Text({children, ...props}: PropsWithChildren<TextProps>) {
-  return <RNText {...props}>{children}</RNText>;
+interface ITextProps extends TextProps, IEnhancedStyleProps {}
+
+export function Text({
+  padding,
+  margin,
+  marginVertical,
+  marginHorizontal,
+  paddingHorizontal,
+  paddingVertical,
+  marginTop,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  flex,
+  elevated,
+  backgroundColor,
+  children,
+  style,
+}: PropsWithChildren<ITextProps>) {
+  const getStyle = useGetEnhancedStyles();
+
+  return (
+    <RNText
+      style={[
+        getStyle({
+          padding,
+          margin,
+          marginVertical,
+          marginHorizontal,
+          paddingHorizontal,
+          paddingVertical,
+          marginTop,
+          marginBottom,
+          marginLeft,
+          marginRight,
+          paddingTop,
+          paddingBottom,
+          paddingLeft,
+          paddingRight,
+          flex,
+          elevated,
+          backgroundColor,
+        }),
+        style,
+      ]}>
+      {children}
+    </RNText>
+  );
 }

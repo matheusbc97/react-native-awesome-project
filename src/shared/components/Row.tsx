@@ -3,7 +3,7 @@ import {EnhancedView, IEnhancedViewProps} from './EnhancedView';
 import {PropsWithChildren} from 'react';
 
 export interface IRowProps extends IEnhancedViewProps {
-  style: StyleProp<Omit<ViewStyle, 'flexDirection'>>;
+  style?: StyleProp<Omit<ViewStyle, 'flexDirection'>>;
 }
 
 export function Row({style, ...props}: PropsWithChildren<IRowProps>) {

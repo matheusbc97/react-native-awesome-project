@@ -1,19 +1,22 @@
-import {Spacing} from './Spacing';
+import {IColor} from './color';
+import {ISpacing} from './spacing';
 
 export interface IEnhancedStyleProps {
-  padding?: Spacing;
-  margin?: Spacing;
-  marginVertical?: Spacing;
-  marginHorizontal?: Spacing;
-  paddingHorizontal?: Spacing;
-  paddingVertical?: Spacing;
-  marginTop?: Spacing;
-  marginBottom?: Spacing;
-  marginLeft?: Spacing;
-  marginRight?: Spacing;
-  paddingTop?: Spacing;
-  paddingBottom?: Spacing;
-  paddingLeft?: Spacing;
-  paddingRight?: Spacing;
+  padding?: ISpacing;
+  margin?: ISpacing;
+  marginVertical?: ISpacing;
+  marginHorizontal?: ISpacing;
+  paddingHorizontal?: ISpacing;
+  paddingVertical?: ISpacing;
+  marginTop?: ISpacing;
+  marginBottom?: ISpacing;
+  marginLeft?: ISpacing;
+  marginRight?: ISpacing;
+  paddingTop?: ISpacing;
+  paddingBottom?: ISpacing;
+  paddingLeft?: ISpacing;
+  paddingRight?: ISpacing;
   flex?: number;
+  elevated?: boolean;
+  backgroundColor?: IColor;
 }

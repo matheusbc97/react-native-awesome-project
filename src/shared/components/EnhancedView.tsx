@@ -9,8 +9,51 @@ export interface IEnhancedViewProps extends IEnhancedStyleProps {
 
 export function EnhancedView({
   style,
+  padding,
+  margin,
+  marginVertical,
+  marginHorizontal,
+  paddingHorizontal,
+  paddingVertical,
+  marginTop,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  flex,
+  elevated,
+  backgroundColor,
   ...props
 }: PropsWithChildren<IEnhancedViewProps>) {
   const getEnhancedViewStyle = useGetEnhancedStyles();
-  return <View style={[getEnhancedViewStyle(props), style]} {...props} />;
+  return (
+    <View
+      style={[
+        getEnhancedViewStyle({
+          padding,
+          margin,
+          marginVertical,
+          marginHorizontal,
+          paddingHorizontal,
+          paddingVertical,
+          marginTop,
+          marginBottom,
+          marginLeft,
+          marginRight,
+          paddingTop,
+          paddingBottom,
+          paddingLeft,
+          paddingRight,
+          flex,
+          elevated,
+          backgroundColor,
+        }),
+        style,
+      ]}
+      {...props}
+    />
+  );
 }

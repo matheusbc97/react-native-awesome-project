@@ -1,5 +1,5 @@
 import {ViewStyle} from 'react-native/types';
-import {spacing} from '../theme';
+import {COLORS, spacing} from '../theme';
 import {IEnhancedStyleProps} from '../types/IEnhancedStyleProps';
 
 export function useGetEnhancedStyles() {
@@ -19,6 +19,8 @@ export function useGetEnhancedStyles() {
     paddingLeft,
     paddingRight,
     flex,
+    elevated,
+    backgroundColor,
   }: IEnhancedStyleProps) => {
     const customStyle: ViewStyle = {};
 
@@ -80,6 +82,21 @@ export function useGetEnhancedStyles() {
 
     if (flex) {
       customStyle.flex = flex;
+    }
+
+    if (elevated) {
+      customStyle.shadowColor = '#000';
+      customStyle.shadowOffset = {
+        width: 0,
+        height: 2,
+      };
+      customStyle.shadowOpacity = 0.2;
+      customStyle.shadowRadius = 2;
+      customStyle.elevation = 5;
+    }
+
+    if (backgroundColor) {
+      customStyle.backgroundColor = COLORS[backgroundColor];
     }
 
     return customStyle;
