@@ -1,8 +1,7 @@
-import {ActivityIndicator, FlatList, FlatListProps} from 'react-native';
-import {ListEmptyComponent} from './ListEmptyComponent';
+import {ActivityIndicator} from 'react-native';
+import {FlatList, IFlatListProps} from './FlatList';
 
-export interface IInfinityScrollFlatListProps<T> extends FlatListProps<T> {
-  keyExtractor: (item: T) => string;
+export interface IInfinityScrollFlatListProps<T> extends IFlatListProps<T> {
   refreshing: boolean;
   onEndReached: () => void;
 }
@@ -16,9 +15,6 @@ export function InfinityScrollFlatList<T>({
     <FlatList
       contentContainerStyle={[{flexGrow: 1}, contentContainerStyle]}
       ListFooterComponent={refreshing ? <ActivityIndicator /> : null}
-      ListEmptyComponent={
-        <ListEmptyComponent text="Nenhum produto encontrado" />
-      }
       refreshing={refreshing}
       {...props}
     />

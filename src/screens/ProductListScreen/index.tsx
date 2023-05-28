@@ -5,7 +5,7 @@ import {ProductList} from './components/ProductList';
 import {AppErrorBoundary, LoadingSuspense} from '../../shared/components';
 import {IScreenProps} from '../../shared/types';
 
-export function ProductListScreen({}: IScreenProps<'Cart'>) {
+export function ProductListScreen({}: IScreenProps<'ProductList'>) {
   return (
     <SafeAreaView style={{flex: 1}}>
       <LoadingSuspense>
