@@ -1,7 +1,7 @@
 import {StyleProp, ViewStyle, StyleSheet} from 'react-native';
-import {Column} from './Column';
-import {Text} from './Text';
-import {TEST_IDS} from '../constants/testIds';
+import {Column} from '../Column';
+import {Text} from '../Text';
+import {TEST_IDS} from '../../constants/testIds';
 
 export interface IBadgeProps {
   count: number;
