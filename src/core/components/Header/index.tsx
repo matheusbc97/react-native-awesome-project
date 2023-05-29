@@ -8,6 +8,7 @@ import {
   useGetCartProductsTotal,
   useSafeAreaInsets,
 } from '../../../shared/hooks';
+import {TEST_IDS} from '../../../shared/constants/testIds';
 
 export function Header({navigation, route, back}: NativeStackHeaderProps) {
   const {top} = useSafeAreaInsets();
@@ -17,6 +18,7 @@ export function Header({navigation, route, back}: NativeStackHeaderProps) {
     <Row style={[{paddingTop: top, height: 50 + top}]}>
       {back && (
         <Button
+          testID={TEST_IDS.HEADER_BACK_BUTTON}
           onPress={() => navigation.pop()}
           padding="xs"
           marginHorizontal="m">
@@ -27,17 +29,20 @@ export function Header({navigation, route, back}: NativeStackHeaderProps) {
       <View style={{flex: 1}} />
 
       {route.name !== 'Cart' && (
-        <View>
+        <View testID={TEST_IDS.BADGE_CONTAINER}>
           <Button
+            testID={TEST_IDS.HEADER_CART_BUTTON}
             onPress={() => navigation.navigate('Cart')}
             padding="xs"
             marginHorizontal="m">
             <FontAwesome5 name="shopping-cart" size={24} color="black" />
           </Button>
-          <Badge
-            count={totalOfProducts}
-            style={{position: 'absolute', right: 10, top: -4}}
-          />
+          {totalOfProducts !== 0 && (
+            <Badge
+              count={totalOfProducts}
+              style={{position: 'absolute', right: 10, top: -4}}
+            />
+          )}
         </View>
       )}
     </Row>

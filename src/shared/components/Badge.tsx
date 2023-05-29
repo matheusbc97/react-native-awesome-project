@@ -1,10 +1,12 @@
 import {StyleProp, ViewStyle, StyleSheet} from 'react-native';
 import {Column} from './Column';
 import {Text} from './Text';
+import {TEST_IDS} from '../constants/testIds';
 
 export interface IBadgeProps {
   count: number;
   style?: StyleProp<ViewStyle>;
+  testID?: string;
 }
 
 const styles = StyleSheet.create({
@@ -22,10 +24,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export function Badge({count, style}: IBadgeProps) {
+export function Badge({count, style, testID = 'badge'}: IBadgeProps) {
   return (
-    <Column style={[styles.badge, style]}>
-      <Text style={styles.text}>{count > 99 ? '99+' : count}</Text>
+    <Column testID={testID} style={[styles.badge, style]}>
+      <Text testID={TEST_IDS.BADGE} style={styles.text}>
+        {count > 99 ? '99+' : count}
+      </Text>
     </Column>
   );
 }

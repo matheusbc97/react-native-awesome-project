@@ -2,12 +2,15 @@ import {View, ViewStyle, StyleProp} from 'react-native';
 import {IEnhancedStyleProps} from '../types/IEnhancedStyleProps';
 import {useGetEnhancedStyles} from '../hooks/useGetEnhancedStyles';
 import {PropsWithChildren} from 'react';
+import {TEST_IDS} from '../constants/testIds';
 
 export interface IEnhancedViewProps extends IEnhancedStyleProps {
   style?: StyleProp<ViewStyle>;
+  testID?: string;
 }
 
 export function EnhancedView({
+  testID = TEST_IDS.ENHANCED_VIEW,
   style,
   padding,
   margin,
@@ -31,6 +34,7 @@ export function EnhancedView({
   const getEnhancedViewStyle = useGetEnhancedStyles();
   return (
     <View
+      testID={testID}
       style={[
         getEnhancedViewStyle({
           padding,

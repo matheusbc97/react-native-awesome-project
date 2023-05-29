@@ -2,10 +2,14 @@ import {PropsWithChildren} from 'react';
 import {Text as RNText, TextProps} from 'react-native';
 import {useGetEnhancedStyles} from '../hooks/useGetEnhancedStyles';
 import {IEnhancedStyleProps} from '../types/IEnhancedStyleProps';
+import {TEST_IDS} from '../constants/testIds';
 
-interface ITextProps extends TextProps, IEnhancedStyleProps {}
+interface ITextProps extends TextProps, IEnhancedStyleProps {
+  testID?: string;
+}
 
 export function Text({
+  testID = TEST_IDS.TEXT,
   padding,
   margin,
   marginVertical,
@@ -31,6 +35,7 @@ export function Text({
 
   return (
     <RNText
+      testID={testID}
       style={[
         getStyle({
           padding,
