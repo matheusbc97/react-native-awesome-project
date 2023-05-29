@@ -33,7 +33,8 @@ export const cartSlice = createSlice({
 export const {addProductToCart, removeProductFromCart} = cartSlice.actions;
 
 const selectCartProducts = selectors.selectAll;
+const selectCartProductById = selectors.selectById;
 
-export {selectCartProducts};
+export {selectCartProducts, selectCartProductById};
 
 export default cartSlice.reducer;

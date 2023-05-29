@@ -2,6 +2,11 @@ import {StyleProp, ViewStyle, Image} from 'react-native';
 
 import {IProduct} from '../../../../shared/types';
 import {Column, Text, TextButton} from '../../../../shared/components';
+import {
+  useAddProductToCart,
+  useIfProductIsInCart,
+  useRemoveProductFromCart,
+} from '../../../../shared/hooks';
 
 import styles from './styles';
 
@@ -11,6 +16,10 @@ export interface IProductListItemProps {
 }
 
 export function ProductListItem({style, product}: IProductListItemProps) {
+  const addProduct = useAddProductToCart();
+  const removeProduct = useRemoveProductFromCart();
+  const isProductInCart = useIfProductIsInCart(product.id);
+
   return (
     <Column
       margin="s"
@@ -22,7 +31,19 @@ export function ProductListItem({style, product}: IProductListItemProps) {
         <Text numberOfLines={2}>{product.title}</Text>
       </Column>
       <Column paddingBottom="s" style={styles.footer}>
-        <TextButton onPress={() => {}} text="ADICIONAR" color="success" />
+        {isProductInCart ? (
+          <TextButton
+            onPress={() => removeProduct(product.id)}
+            text="REMOVER"
+            color="success"
+          />
+        ) : (
+          <TextButton
+            onPress={() => addProduct(product)}
+            text="ADICIONAR"
+            color="success"
+          />
+        )}
       </Column>
     </Column>
   );
