@@ -1,16 +1,12 @@
-import {QueryClient, QueryClientProvider} from 'react-query';
 import {AppNavigator} from './core/navigation/AppNavigator';
-import {store} from './core/store';
-import {Provider} from 'react-redux';
-
-const queryClient = new QueryClient();
+import {GlobalStoreProvider, QueryClientProvider} from './core/providers';
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
+    <QueryClientProvider>
+      <GlobalStoreProvider>
         <AppNavigator />
-      </Provider>
+      </GlobalStoreProvider>
     </QueryClientProvider>
   );
 }
