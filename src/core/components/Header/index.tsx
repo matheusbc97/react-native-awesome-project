@@ -36,13 +36,13 @@ export function Header({navigation, route, back}: NativeStackHeaderProps) {
             padding="xs"
             marginHorizontal="m">
             <FontAwesome5 name="shopping-cart" size={24} color="black" />
+            {totalOfProducts !== 0 && (
+              <Badge
+                count={totalOfProducts}
+                style={{position: 'absolute', right: -4, top: -4}}
+              />
+            )}
           </Button>
-          {totalOfProducts !== 0 && (
-            <Badge
-              count={totalOfProducts}
-              style={{position: 'absolute', right: 10, top: -4}}
-            />
-          )}
         </View>
       )}
     </Row>
