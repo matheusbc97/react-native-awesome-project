@@ -3,8 +3,11 @@ import {View} from 'react-native';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import {FontAwesome5, FontAwesome} from '@expo/vector-icons';
 
-import {Row, Button, Badge} from '../../shared/components';
-import {useGetCartProductsTotal, useSafeAreaInsets} from '../../shared/hooks';
+import {Row, Button, Badge} from '../../../shared/components';
+import {
+  useGetCartProductsTotal,
+  useSafeAreaInsets,
+} from '../../../shared/hooks';
 
 export function Header({navigation, route, back}: NativeStackHeaderProps) {
   const {top} = useSafeAreaInsets();
