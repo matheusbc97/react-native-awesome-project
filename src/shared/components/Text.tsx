@@ -25,6 +25,7 @@ export function Text({
   backgroundColor,
   children,
   style,
+  ...props
 }: PropsWithChildren<ITextProps>) {
   const getStyle = useGetEnhancedStyles();
 
@@ -51,7 +52,8 @@ export function Text({
           backgroundColor,
         }),
         style,
-      ]}>
+      ]}
+      {...props}>
       {children}
     </RNText>
   );
