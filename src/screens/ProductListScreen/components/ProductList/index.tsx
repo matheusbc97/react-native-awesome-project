@@ -9,6 +9,7 @@ export function ProductList() {
   return (
     <Column padding="s" flex={1}>
       <InfinityScrollFlatList
+        emptyListText="Nenhum produto encontrado"
         data={products}
         renderItem={({item: product}) => (
           <ProductListItem product={product} style={{flex: 0.5}} />

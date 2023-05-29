@@ -21,17 +21,17 @@ describe('FlatList Component', () => {
   });
 
   it('should render list items', () => {
-    const item = 'test';
+    const dataItem = 'test';
     const {getByText} = render(
       <FlatList
         keyExtractor={() => 'test'}
         emptyListText="There is no data"
-        data={[item]}
+        data={[dataItem]}
         renderItem={({item}) => <Text>{item}</Text>}
       />,
     );
 
-    expect(getByText(item)).toBeVisible();
+    expect(getByText(dataItem)).toBeVisible();
   });
 
   it('should render empty list component when there is no data', () => {
