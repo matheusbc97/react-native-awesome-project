@@ -1,6 +1,7 @@
 import {render, fireEvent} from '@testing-library/react-native';
 import {Header} from './index';
 import {EdgeInsets} from 'react-native-safe-area-context';
+import {TEST_IDS} from '../../../shared/constants/testIds';
 
 let mockUseGetCartProductsTotal: jest.Mock;
 
@@ -91,7 +92,7 @@ describe('Header', () => {
       <Header navigation={mockNavigation} route={mockRoute} options={{}} />,
     );
 
-    const cartButton = queryByTestId('header-cart-button');
+    const cartButton = queryByTestId(TEST_IDS.HEADER_CART_BUTTON);
 
     expect(cartButton).not.toBeNull();
   });
@@ -101,7 +102,7 @@ describe('Header', () => {
       <Header navigation={mockNavigation} route={mockRoute} options={{}} />,
     );
 
-    fireEvent.press(getByTestId('cart-button'));
+    fireEvent.press(getByTestId(TEST_IDS.HEADER_CART_BUTTON));
 
     expect(mockNavigation.navigate).toHaveBeenCalledWith('Cart');
   });
@@ -116,7 +117,7 @@ describe('Header', () => {
       />,
     );
 
-    const backButton = queryByTestId('back-button');
+    const backButton = queryByTestId(TEST_IDS.HEADER_BACK_BUTTON);
 
     expect(backButton).not.toBeNull();
   });
@@ -141,7 +142,7 @@ describe('Header', () => {
       />,
     );
 
-    fireEvent.press(getByTestId('back-button'));
+    fireEvent.press(getByTestId(TEST_IDS.HEADER_BACK_BUTTON));
 
     expect(mockNavigation.pop).toHaveBeenCalled();
   });

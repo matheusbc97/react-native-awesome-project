@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 export function Badge({count, style, testID = 'badge'}: IBadgeProps) {
   return (
     <Column testID={testID} style={[styles.badge, style]}>
-      <Text testID={TEST_IDS.BADGE} style={styles.text}>
+      <Text testID={TEST_IDS.BADGE_TEXT} style={styles.text}>
         {count > 99 ? '99+' : count}
       </Text>
     </Column>
