@@ -7,4 +7,5 @@ export const TEST_IDS = {
   BUTTON: 'button',
   ENHANCED_VIEW: 'enhanced-view',
   TEXT: 'text',
+  FLAT_LIST: 'flat-list',
 };
