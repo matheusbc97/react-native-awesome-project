@@ -12,4 +12,6 @@ export const TEST_IDS = {
   CENTER: 'center',
   LIST_EMPTY_COMPONENT: 'list-empty-component',
   PRODUCT_LIST_ITEM: 'product-list-item',
+  PRODUCT_LIST_ITEM_REMOVE_BUTTON: 'PRODUCT_LIST_ITEM-remove-product-button',
+  PRODUCT_LIST_ITEM_ADD_BUTTON: 'PRODUCT_LIST_ITEM-add-product-button',
 };

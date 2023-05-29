@@ -9,6 +9,7 @@ import {
 } from '../../../../shared/hooks';
 
 import styles from './styles';
+import {TEST_IDS} from '../../../../shared/constants/testIds';
 
 export interface IProductListItemProps {
   style?: StyleProp<ViewStyle>;
@@ -33,12 +34,14 @@ export function ProductListItem({style, product}: IProductListItemProps) {
       <Column paddingBottom="s" style={styles.footer}>
         {isProductInCart ? (
           <TextButton
+            testID={TEST_IDS.PRODUCT_LIST_ITEM_REMOVE_BUTTON}
             onPress={() => removeProduct(product.id)}
             text="REMOVER"
             color="success"
           />
         ) : (
           <TextButton
+            testID={TEST_IDS.PRODUCT_LIST_ITEM_ADD_BUTTON}
             onPress={() => addProduct(product)}
             text="ADICIONAR"
             color="success"

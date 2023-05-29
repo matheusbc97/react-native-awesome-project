@@ -7,11 +7,13 @@ export interface ITextButtonProps {
   text: string;
   color?: 'success' | 'danger';
   style?: StyleProp<ViewStyle>;
+  testID?: string;
 }
 
-export function TextButton({onPress, text, style}: ITextButtonProps) {
+export function TextButton({onPress, text, style, testID}: ITextButtonProps) {
   return (
     <TouchableOpacity
+      testID={testID}
       style={[{padding: spacing.xs}, style]}
       onPress={onPress}>
       <Text style={{color: '#388E3C'}}>{text}</Text>
