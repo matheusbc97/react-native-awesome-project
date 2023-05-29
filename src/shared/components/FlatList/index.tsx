@@ -20,7 +20,12 @@ export function FlatList<T>({
       testID={testID}
       contentContainerStyle={[{flexGrow: 1}, contentContainerStyle]}
       ListEmptyComponent={
-        ListEmptyComponentProp ?? <ListEmptyComponent text={emptyListText} />
+        ListEmptyComponentProp ?? (
+          <ListEmptyComponent
+            testID={TEST_IDS.LIST_EMPTY_COMPONENT}
+            text={emptyListText}
+          />
+        )
       }
       {...props}
     />

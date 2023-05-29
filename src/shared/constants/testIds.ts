@@ -8,4 +8,8 @@ export const TEST_IDS = {
   ENHANCED_VIEW: 'enhanced-view',
   TEXT: 'text',
   FLAT_LIST: 'flat-list',
+  INFINITY_SCROLL_FLAT_LIST: 'infinity-scroll-flat-list',
+  CENTER: 'center',
+  LIST_EMPTY_COMPONENT: 'list-empty-component',
+  PRODUCT_LIST_ITEM: 'product-list-item',
 };
