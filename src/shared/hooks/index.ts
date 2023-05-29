@@ -4,3 +4,4 @@ export * from './useGetCartProducts';
 export * from './useAddProductToCart';
 export * from './useIfProductIsInCart';
 export * from './useRemoveProductFromCart';
+export * from './useGetCartProductsTotal';

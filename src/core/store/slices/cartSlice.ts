@@ -34,7 +34,8 @@ export const {addProductToCart, removeProductFromCart} = cartSlice.actions;
 
 const selectCartProducts = selectors.selectAll;
 const selectCartProductById = selectors.selectById;
+const selectCartProductsTotal = selectors.selectTotal;
 
-export {selectCartProducts, selectCartProductById};
+export {selectCartProducts, selectCartProductById, selectCartProductsTotal};
 
 export default cartSlice.reducer;

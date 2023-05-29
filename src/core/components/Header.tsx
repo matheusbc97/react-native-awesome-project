@@ -3,11 +3,12 @@ import {View} from 'react-native';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import {FontAwesome5, FontAwesome} from '@expo/vector-icons';
 
-import {Row, Button} from '../../shared/components';
-import {useSafeAreaInsets} from '../../shared/hooks';
+import {Row, Button, Badge} from '../../shared/components';
+import {useGetCartProductsTotal, useSafeAreaInsets} from '../../shared/hooks';
 
 export function Header({navigation, route, back}: NativeStackHeaderProps) {
   const {top} = useSafeAreaInsets();
+  const totalOfProducts = useGetCartProductsTotal();
 
   return (
     <Row style={[{paddingTop: top, height: 50 + top}]}>
@@ -23,12 +24,18 @@ export function Header({navigation, route, back}: NativeStackHeaderProps) {
       <View style={{flex: 1}} />
 
       {route.name !== 'Cart' && (
-        <Button
-          onPress={() => navigation.navigate('Cart')}
-          padding="xs"
-          marginHorizontal="m">
-          <FontAwesome5 name="shopping-cart" size={24} color="black" />
-        </Button>
+        <View>
+          <Button
+            onPress={() => navigation.navigate('Cart')}
+            padding="xs"
+            marginHorizontal="m">
+            <FontAwesome5 name="shopping-cart" size={24} color="black" />
+          </Button>
+          <Badge
+            count={totalOfProducts}
+            style={{position: 'absolute', right: 10, top: -4}}
+          />
+        </View>
       )}
     </Row>
   );
