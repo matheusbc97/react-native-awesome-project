@@ -1,7 +1,6 @@
-import {Image} from 'react-native';
 import {FontAwesome5} from '@expo/vector-icons';
 
-import {Row, Text, Button} from '../../../shared/components';
+import {Row, Text, Button, Image} from '../../../shared/components';
 import {IProduct} from '../../../shared/types';
 import {useRemoveProductFromCart} from '../../../shared/hooks';
 
@@ -21,7 +20,7 @@ export function CartListItem({product}: ICartListItemProps) {
       marginHorizontal="m"
       style={{borderRadius: 2, overflow: 'hidden', height: CART_ITEM_HEIGHT}}>
       <Image
-        source={{uri: product.thumbnail}}
+        source={product.thumbnail}
         style={{width: 50, height: CART_ITEM_HEIGHT}}
       />
       <Text

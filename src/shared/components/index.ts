@@ -11,3 +11,4 @@ export * from './Row';
 export * from './Button';
 export * from './FlatList';
 export * from './Badge';
+export * from './Image';

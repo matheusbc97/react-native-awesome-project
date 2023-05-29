@@ -2,17 +2,22 @@ import {ListRenderItemInfo} from 'react-native';
 
 import {IProduct, IScreenProps} from '../../shared/types';
 import {FlatList} from '../../shared/components';
+import {useCallback} from 'react';
+
 import {useGetCartProducts} from '../../shared/hooks';
 import {spacing} from '../../shared/theme';
 
 import {CART_ITEM_HEIGHT, CartListItem} from './components/CartListItem';
 
-const renderItem = ({item: product}: ListRenderItemInfo<IProduct>) => (
-  <CartListItem product={product} />
-);
-
 export function CartScreen({}: IScreenProps<'Cart'>) {
   const cartProducts = useGetCartProducts();
+
+  const renderItem = useCallback(
+    ({item: product}: ListRenderItemInfo<IProduct>) => (
+      <CartListItem product={product} />
+    ),
+    [],
+  );
 
   return (
     <FlatList

@@ -1,7 +1,7 @@
-import {StyleProp, ViewStyle, Image} from 'react-native';
+import {StyleProp, ViewStyle} from 'react-native';
 
 import {IProduct} from '../../../../shared/types';
-import {Column, Text, TextButton} from '../../../../shared/components';
+import {Column, Image, Text, TextButton} from '../../../../shared/components';
 import {
   useAddProductToCart,
   useIfProductIsInCart,
@@ -27,7 +27,7 @@ export function ProductListItem({style, product}: IProductListItemProps) {
       elevated
       backgroundColor="surface"
       style={[style, styles.container]}>
-      <Image source={{uri: product.thumbnail, height: 120}} />
+      <Image source={product.thumbnail} style={{height: 120}} />
       <Column paddingVertical="s" paddingHorizontal="m" flex={1}>
         <Text numberOfLines={2}>{product.title}</Text>
       </Column>
