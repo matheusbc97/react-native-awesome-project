@@ -8,6 +8,7 @@ import {useGetCartProducts} from '../../shared/hooks';
 import {spacing} from '../../shared/theme';
 
 import {CART_ITEM_HEIGHT, CartListItem} from './components/CartListItem';
+import {TEST_IDS} from '../../shared/constants/testIds';
 
 export function CartScreen({}: IScreenProps<'Cart'>) {
   const cartProducts = useGetCartProducts();
@@ -21,6 +22,7 @@ export function CartScreen({}: IScreenProps<'Cart'>) {
 
   return (
     <FlatList
+      testID={TEST_IDS.CART_SCREEN_FLAT_LIST}
       style={{paddingVertical: spacing.xs}}
       data={cartProducts}
       emptyListText="Carrinho Vazio"

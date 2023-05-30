@@ -14,4 +14,7 @@ export const TEST_IDS = {
   PRODUCT_LIST_ITEM: 'product-list-item',
   PRODUCT_LIST_ITEM_REMOVE_BUTTON: 'PRODUCT_LIST_ITEM-remove-product-button',
   PRODUCT_LIST_ITEM_ADD_BUTTON: 'PRODUCT_LIST_ITEM-add-product-button',
+  CART_SCREEN_FLAT_LIST: 'cart-screen-flat-list',
+  CART_LIST_ITEM: 'cart-list-item',
+  CART_LIST_ITEM_REMOVE_BUTTON: 'CART_LIST_ITEM-remove-product-button',
 };
