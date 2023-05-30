@@ -1,4 +1,4 @@
-import {StyleProp, ViewStyle} from 'react-native';
+import {StyleProp, View, ViewStyle} from 'react-native';
 
 import {IProduct} from '../../../../shared/types';
 import {Column, Image, Text, TextButton} from '../../../../shared/components';
@@ -27,7 +27,9 @@ export function ProductListItem({style, product}: IProductListItemProps) {
       elevated
       backgroundColor="surface"
       style={[style, styles.container]}>
-      <Image source={product.thumbnail} style={{height: 120}} />
+      <View style={styles.imageContainer}>
+        <Image source={product.thumbnail} style={{height: 120}} />
+      </View>
       <Column paddingVertical="s" paddingHorizontal="m" flex={1}>
         <Text numberOfLines={2}>{product.title}</Text>
       </Column>

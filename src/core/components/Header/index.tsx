@@ -15,7 +15,10 @@ export function Header({navigation, route, back}: NativeStackHeaderProps) {
   const totalOfProducts = useGetCartProductsTotal();
 
   return (
-    <Row style={[{paddingTop: top, height: 50 + top}]}>
+    <Row
+      backgroundColor="surface"
+      elevated
+      style={[{paddingTop: top, height: 50 + top}]}>
       {back && (
         <Button
           testID={TEST_IDS.HEADER_BACK_BUTTON}

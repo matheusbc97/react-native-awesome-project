@@ -3,10 +3,13 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     borderRadius: 5,
-
-    overflow: 'hidden',
   },
   footer: {
     alignItems: 'center',
+  },
+  imageContainer: {
+    overflow: 'hidden',
+    borderTopRightRadius: 3,
+    borderTopLeftRadius: 3,
   },
 });

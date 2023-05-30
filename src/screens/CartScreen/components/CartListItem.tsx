@@ -4,13 +4,13 @@ import {Row, Text, Button, Image} from '../../../shared/components';
 import {IProduct} from '../../../shared/types';
 import {useRemoveProductFromCart} from '../../../shared/hooks';
 import {TEST_IDS} from '../../../shared/constants/testIds';
+import {View} from 'react-native';
+import styles from './styles';
 
 interface ICartListItemProps {
   product: IProduct;
   testID?: string;
 }
-
-export const CART_ITEM_HEIGHT = 50;
 
 export function CartListItem({
   product,
@@ -20,15 +20,15 @@ export function CartListItem({
 
   return (
     <Row
+      elevated
       testID={testID}
       backgroundColor="surface"
       marginVertical="s"
       marginHorizontal="m"
-      style={{borderRadius: 2, overflow: 'hidden', height: CART_ITEM_HEIGHT}}>
-      <Image
-        source={product.thumbnail}
-        style={{width: 50, height: CART_ITEM_HEIGHT}}
-      />
+      style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={product.thumbnail} style={styles.image} />
+      </View>
       <Text
         flex={1}
         paddingHorizontal="m"
