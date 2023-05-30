@@ -1,5 +1,7 @@
 import {PropsWithChildren, Suspense} from 'react';
-import {SafeAreaView, Text, ActivityIndicator, View} from 'react-native';
+import {SafeAreaView, ActivityIndicator} from 'react-native';
+import {Center} from './Center';
+import {Text} from './Text';
 
 export interface ILoadingSuspense {}
 
@@ -10,10 +12,10 @@ export function LoadingSuspense({
     <SafeAreaView style={{flex: 1}}>
       <Suspense
         fallback={
-          <View style={{alignSelf: 'center'}}>
+          <Center>
             <ActivityIndicator />
-            <Text>loading...</Text>
-          </View>
+            <Text paddingTop="s">Carregando...</Text>
+          </Center>
         }>
         {children}
       </Suspense>
