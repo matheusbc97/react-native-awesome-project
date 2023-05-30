@@ -1,6 +1,7 @@
+import { Meta } from '@storybook/react-native';
 import { Button, Center } from '../../../src/shared/components';
 
-const ButtonMeta = {
+const ButtonMeta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
   argTypes: {
@@ -19,9 +20,11 @@ const ButtonMeta = {
 export default ButtonMeta;
 
 export const Basic = {
-  style: {
-    backgroundColor: 'red',
-    width: 200,
-    height: 50,
-  }
+  args: {
+    style: {
+      backgroundColor: 'red',
+      width: 200,
+      height: 50,
+    }
+  },
 };
