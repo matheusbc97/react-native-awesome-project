@@ -1,31 +1,27 @@
-import React from 'react';
-import { View } from 'react-native';
-import { MyButton } from './Button';
+import { Button, Center } from '../../../src/shared/components';
 
-const MyButtonMeta = {
-  title: 'MyButton',
-  component: MyButton,
+const ButtonMeta = {
+  title: 'Button',
+  component: Button,
   argTypes: {
     onPress: { action: 'pressed the button' },
   },
-  args: {
-    text: 'Hello world',
-  },
+  args: {},
   decorators: [
     (Story) => (
-      <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <Center>
         <Story />
-      </View>
+      </Center>
     ),
   ],
 };
 
-export default MyButtonMeta;
+export default ButtonMeta;
 
-export const Basic = {};
-
-export const AnotherExample = {
-  args: {
-    text: 'Another example',
-  },
+export const Basic = {
+  style: {
+    backgroundColor: 'red',
+    width: 200,
+    height: 50,
+  }
 };
