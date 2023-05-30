@@ -4,7 +4,7 @@ import {useGetEnhancedStyles} from '../hooks/useGetEnhancedStyles';
 import {IEnhancedStyleProps} from '../types/IEnhancedStyleProps';
 import {TEST_IDS} from '../constants/testIds';
 
-interface ITextProps extends TextProps, IEnhancedStyleProps {
+export interface ITextProps extends TextProps, IEnhancedStyleProps {
   testID?: string;
 }
 

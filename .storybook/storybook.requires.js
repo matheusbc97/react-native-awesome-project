@@ -49,6 +49,7 @@ const getStories = () => {
   return {
     "./.storybook/stories/Badge/Badge.stories.tsx": require("./stories/Badge/Badge.stories.tsx"),
     "./.storybook/stories/Button/Button.stories.tsx": require("./stories/Button/Button.stories.tsx"),
+    "./.storybook/stories/Text/Text.stories.tsx": require("./stories/Text/Text.stories.tsx"),
   };
 };
 
