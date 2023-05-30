@@ -1,13 +1,14 @@
+import {PropsWithChildren} from 'react';
 import {fireEvent, render, renderHook} from '@testing-library/react-native';
-import {CartScreen} from './index';
+
 import {IRouteProp} from '../../shared/types';
 import {GlobalStoreProvider} from '../../core/providers';
-import {PropsWithChildren} from 'react';
+
 import {TEST_IDS} from '../../shared/constants/testIds';
 import {useAddProductToCart} from '../../shared/hooks';
-import {Provider} from 'react-redux';
-import {store} from '../../core/store';
 import {mockedProducts} from '../../shared/mocks/products';
+
+import {CartScreen} from './index';
 
 const mockNavigation: any = {
   pop: jest.fn(),
@@ -33,7 +34,7 @@ describe('CartScreen', () => {
 
   it('should add and after remove a product from cart', async () => {
     const wrapper = ({children}: PropsWithChildren) => (
-      <Provider store={store}>{children}</Provider>
+      <GlobalStoreProvider>{children}</GlobalStoreProvider>
     );
 
     const {getByTestId, getAllByTestId} = render(
