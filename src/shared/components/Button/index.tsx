@@ -4,7 +4,7 @@ import {IEnhancedStyleProps} from '../../types/IEnhancedStyleProps';
 import {PropsWithChildren} from 'react';
 import {TEST_IDS} from '../../constants/testIds';
 
-interface IButtonProps extends IEnhancedStyleProps {
+export interface IButtonProps extends IEnhancedStyleProps {
   onPress: () => void;
   testID?: string;
   style?: StyleProp<ViewStyle>;
