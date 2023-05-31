@@ -8,7 +8,8 @@ import {TEXTS} from '../../../../shared/constants/texts';
 import {IProduct} from '../../../../shared/types';
 
 export function ProductList() {
-  const {products, fetchNextPage, refetch, isRefetching} = useGetProducts();
+  const {products, fetchNextPage, refetch, isRefetching, isFetching} =
+    useGetProducts();
 
   const renderItem = useCallback(
     ({item: product}: ListRenderItemInfo<IProduct>) => (
@@ -20,6 +21,7 @@ export function ProductList() {
   return (
     <Column padding="s" flex={1}>
       <InfinityScrollFlatList
+        isFetching={isFetching}
         emptyListText={TEXTS.NO_PRODUCTS_FOUND}
         data={products}
         renderItem={renderItem}

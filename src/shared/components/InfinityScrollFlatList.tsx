@@ -4,6 +4,7 @@ import {TEST_IDS} from '../constants/testIds';
 
 export interface IInfinityScrollFlatListProps<T> extends IFlatListProps<T> {
   refreshing: boolean;
+  isFetching: boolean;
   onEndReached: () => void;
   testID?: string;
 }
@@ -11,6 +12,7 @@ export interface IInfinityScrollFlatListProps<T> extends IFlatListProps<T> {
 export function InfinityScrollFlatList<T>({
   contentContainerStyle,
   refreshing,
+  isFetching,
   testID = TEST_IDS.INFINITY_SCROLL_FLAT_LIST,
   ...props
 }: IInfinityScrollFlatListProps<T>) {
@@ -18,7 +20,7 @@ export function InfinityScrollFlatList<T>({
     <FlatList
       testID={testID}
       contentContainerStyle={[{flexGrow: 1}, contentContainerStyle]}
-      ListFooterComponent={refreshing ? <ActivityIndicator /> : null}
+      ListFooterComponent={isFetching ? <ActivityIndicator /> : null}
       refreshing={refreshing}
       {...props}
     />
