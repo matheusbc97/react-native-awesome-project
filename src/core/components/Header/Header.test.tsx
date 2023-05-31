@@ -5,7 +5,7 @@ import {TEST_IDS} from '../../../shared/constants/testIds';
 
 let mockUseGetCartProductsTotal: jest.Mock;
 
-jest.mock('../../../shared/hooks/useGetCartProductsTotal.ts', () => {
+jest.mock('../../../shared/hooks/data/cart/useGetCartProductsTotal.ts', () => {
   mockUseGetCartProductsTotal = jest.fn();
 
   return {

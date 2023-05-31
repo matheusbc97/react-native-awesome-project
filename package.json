@@ -2,7 +2,8 @@
   "name": "stone-challenge",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
+    "start": "IS_DOCS=false expo start",
+    "start-docs": "IS_DOCS=true expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -37,6 +38,7 @@
     "@reduxjs/toolkit": "1.9.5",
     "axios": "1.4.0",
     "expo": "48.0.15",
+    "expo-constants": "~14.2.1",
     "expo-image": "~1.0.1",
     "expo-status-bar": "1.4.4",
     "react": "18.2.0",

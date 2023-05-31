@@ -1,16 +1,7 @@
-//export {default} from '../.storybook';
+import Constants from 'expo-constants';
 
-import {AppNavigator} from './core/navigation/AppNavigator';
-import {GlobalStoreProvider, QueryClientProvider} from './core/providers';
-
-function App() {
-  return (
-    <QueryClientProvider>
-      <GlobalStoreProvider>
-        <AppNavigator />
-      </GlobalStoreProvider>
-    </QueryClientProvider>
-  );
+if (Constants.expoConfig?.extra?.isDocs) {
+  module.exports = require('../.storybook').default;
+} else {
+  module.exports = require('./core/Main').default;
 }
-
-export default App;

@@ -1,9 +1,9 @@
-import App from './App';
+import Main from './Main';
 
 import renderer from 'react-test-renderer';
 
-describe('<App />', () => {
+describe('<Main />', () => {
   it('renders correctly', () => {
-    renderer.create(<App />);
+    renderer.create(<Main />);
   });
 });

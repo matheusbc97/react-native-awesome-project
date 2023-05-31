@@ -8,7 +8,7 @@ let mockAddProductToCart: jest.Mock;
 let mockRemoveProductFromCart: jest.Mock;
 let mockIsProductInCart: jest.Mock;
 
-jest.mock('../../../../shared/hooks/useAddProductToCart', () => {
+jest.mock('../../../../shared/hooks/data/cart/useAddProductToCart', () => {
   mockAddProductToCart = jest.fn();
 
   return {
@@ -18,7 +18,7 @@ jest.mock('../../../../shared/hooks/useAddProductToCart', () => {
   };
 });
 
-jest.mock('../../../../shared/hooks/useRemoveProductFromCart', () => {
+jest.mock('../../../../shared/hooks/data/cart/useRemoveProductFromCart', () => {
   mockRemoveProductFromCart = jest.fn();
 
   return {
@@ -28,7 +28,7 @@ jest.mock('../../../../shared/hooks/useRemoveProductFromCart', () => {
   };
 });
 
-jest.mock('../../../../shared/hooks/useIfProductIsInCart', () => {
+jest.mock('../../../../shared/hooks/data/cart/useIfProductIsInCart', () => {
   mockIsProductInCart = jest.fn(() => false);
 
   return {
