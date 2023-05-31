@@ -10,7 +10,7 @@ O Gerenciador de pacotes utilizado foi o **yarn v1.22.18** e o node v16.5.0
 
 ## Instalando as dependências
 
-Antes de rodar o projeto instale as dependências com `yarn`(recomendado)  `npm i`,  ou o gerenciador de pacotes de sua preferência.
+Antes de rodar o projeto instale as dependências com `yarn`(recomendado),  `npm i`,  ou o gerenciador de pacotes de sua preferência.
 
 ## Rodando o projeto
 
@@ -18,7 +18,15 @@ Execute o comando  `yarn start` ou `npm run start`.
 
 ## Rodando testes
 
-Execute o comando `yarn test` ou `yarn run test`.
+Execute o comando `yarn test` ou `npm run test`.
+
+## Rodando documentação com storybook
+
+Execute o comando `yarn start-docs` ou `npm start-docs`
+
+
+### Alterando documentação
+Para alterar a documentação utilize o comando `yarn storybook-watch` ou `npm storybook-watch` antes de rodar o projeto
 
 ## Estrutura do projeto
 
@@ -45,3 +53,8 @@ Os commits devem ser feitos no seguinte formato: `<type>(<scope>): <subject>` on
 `ci`: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs);  
 `build`: Alterações que afetam o sistema de construção ou dependências externas (escopos de exemplo: gulp, broccoli, npm)  
 `env`: basicamente utilizado na descrição de modificações ou adições em arquivos de configuração em processos e métodos de integração contínua (CI), como parâmetros em arquivos de configuração de containers.  
+
+## Considerações Finais
+Fazer um aplicativo de qualidade demora um bom e tempo por isso, não realizei testes em tudo e nem documentei tudo, mas fiz aquilo que julguei ser o suficiente para avaliarem meu trabalho.  
+Espero que gostem do desafio que foi feito e tudo dando certo espero entrar para o time stone.
+Desde já agradeço pela oportunidade
