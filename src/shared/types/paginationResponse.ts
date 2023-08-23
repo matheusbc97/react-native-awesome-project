@@ -1,5 +1,4 @@
 export interface PaginationResponse {
-  limit: number;
-  skip: number;
+  page: number;
   total: number;
 }

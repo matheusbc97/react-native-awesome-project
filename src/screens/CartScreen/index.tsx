@@ -7,8 +7,9 @@ import {useCallback} from 'react';
 import {useGetCartProducts} from '../../shared/hooks';
 import {spacing} from '../../shared/theme';
 
-import {CART_ITEM_HEIGHT, CartListItem} from './components/CartListItem';
+import {CartListItem} from './components/CartListItem';
 import {TEST_IDS} from '../../shared/constants/testIds';
+import {CART_ITEM_HEIGHT} from './components/styles';
 
 export function CartScreen({}: IScreenProps<'Cart'>) {
   const cartProducts = useGetCartProducts();

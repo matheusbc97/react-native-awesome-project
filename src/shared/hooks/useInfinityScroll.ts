@@ -33,7 +33,7 @@ export function useInfinityScroll<
         skip: pageParam * limit,
       }),
     getNextPageParam: (lastPage, pages) => {
-      if (lastPage.skip + lastPage.limit >= lastPage.total) {
+      if (lastPage.page >= lastPage.total) {
         return;
       }
       return pages.length + 1;
