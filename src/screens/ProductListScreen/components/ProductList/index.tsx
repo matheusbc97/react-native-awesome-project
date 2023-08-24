@@ -7,7 +7,11 @@ import {ProductListItem} from '../ProductListItem';
 import {TEXTS} from '../../../../shared/constants/texts';
 import {IProduct} from '../../../../shared/types';
 
-export function ProductList() {
+interface IProductListProps {
+  search: string;
+}
+
+export function ProductList({search}: IProductListProps) {
   const {products, fetchNextPage, refetch, isRefetching, isFetching} =
     useGetProducts();
 
@@ -23,7 +27,9 @@ export function ProductList() {
       <InfinityScrollFlatList
         isFetching={isFetching}
         emptyListText={TEXTS.NO_PRODUCTS_FOUND}
-        data={products}
+        data={products?.filter(product =>
+          product.title.toLowerCase().includes(search.toLowerCase()),
+        )}
         renderItem={renderItem}
         keyExtractor={product => product.id.toString()}
         numColumns={2}
