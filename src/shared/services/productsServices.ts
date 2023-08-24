@@ -13,5 +13,9 @@ export async function getProductListService(
     params,
   });
 
-  return response.data;
+  return {
+    page: 1,
+    products: response.data,
+    total: 1,
+  };
 }
